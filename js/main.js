@@ -114,47 +114,47 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ================================================= inputmask, форма обратной связи*/
-$(document).ready(function () {
-    $(":input").inputmask();
-    $(".inputmask-phone").inputmask({
-        mask: "+7 (999) 999-99-99",
-        clearIncomplete: true
-    });
-    $('.inputmask-email').inputmask({
-        mask: "*{1,20}[.*{1,20}]@*{1,20}.*{2,4}",
-        greedy: false,
-        clearIncomplete: true,
-        onBeforePaste: function (pastedValue, opts) {
-            pastedValue = pastedValue.toLowerCase();
-            return pastedValue.replace("mailto:", "");
-        },
-        definitions: {
-            '*': {
-                validator: "[0-9A-Za-z-а-я-]",
-                casing: "lower"
-            }
-        }
-    });
-    $(".form__item--50 input").inputmask({
-        mask: '99999',
-        placeholder: ''
-    });
-    // =================== запрещаем ввод кол-ва масок выше 50 шт
-    const form = document.querySelectorAll('.form');
-    form.forEach(item => {
-        let valuesMask = item.querySelector('.values-mask');
-        valuesMask.addEventListener('blur', function () {
-            if (valuesMask.value < 50) {
-                valuesMask.value = 50
-            }
-        })
-    });
-    // ================ запрещаем ввод цифр в поле с именем
-    document.querySelector('.fio').addEventListener('input', function () {
-        this.value = this.value.replace(/[0-9]/, '');
-    });
+// $(document).ready(function () {
+//     $(":input").inputmask();
+//     $(".inputmask-phone").inputmask({
+//         mask: "+7 (999) 999-99-99",
+//         clearIncomplete: true
+//     });
+//     $('.inputmask-email').inputmask({
+//         mask: "*{1,20}[.*{1,20}]@*{1,20}.*{2,4}",
+//         greedy: false,
+//         clearIncomplete: true,
+//         onBeforePaste: function (pastedValue, opts) {
+//             pastedValue = pastedValue.toLowerCase();
+//             return pastedValue.replace("mailto:", "");
+//         },
+//         definitions: {
+//             '*': {
+//                 validator: "[0-9A-Za-z-а-я-]",
+//                 casing: "lower"
+//             }
+//         }
+//     });
+//     $(".form__item--50 input").inputmask({
+//         mask: '99999',
+//         placeholder: ''
+//     });
+//     // =================== запрещаем ввод кол-ва масок выше 50 шт
+//     const form = document.querySelectorAll('.form');
+//     form.forEach(item => {
+//         let valuesMask = item.querySelector('.values-mask');
+//         valuesMask.addEventListener('blur', function () {
+//             if (valuesMask.value < 50) {
+//                 valuesMask.value = 50
+//             }
+//         })
+//     });
+//     // ================ запрещаем ввод цифр в поле с именем
+//     document.querySelector('.fio').addEventListener('input', function () {
+//         this.value = this.value.replace(/[0-9]/, '');
+//     });
 
-});
+// });
 
 /* ================================================= галерея */
 document.addEventListener('DOMContentLoaded', function () {
